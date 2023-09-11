@@ -1,0 +1,23 @@
+name: Standalone workflow with matrix strategy
+
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-standalone-workflow: 
+    strategy:
+      matrix:
+        include:
+          - message: test1
+          - message: test2
+          - message: test3
+          - message: test4
+ 
+    name: run-standalone-workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print the message
+        run: |
+          echo Test reusable workflow ${{ matrix.message }}

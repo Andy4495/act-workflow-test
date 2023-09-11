@@ -1,0 +1,21 @@
+
+name: reusable-workflow
+
+on: 
+  workflow_call:
+    inputs:
+      message:
+        description: Message to display
+        required: true
+        type: string
+
+jobs:
+  reusable-workflow: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print the message
+        run: |
+          echo Test reusable workflow ${{ inputs.message }}
+
+

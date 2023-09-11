@@ -1,0 +1,22 @@
+name: Call Reusable Workflow
+
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  call-reusable-workflow: 
+    strategy:
+      matrix:
+        include:
+          - message: test1
+          - message: test2
+          - message: test3
+          - message: test4
+ 
+    name: call-reusable-workflow
+    uses: Andy4495/act-workflow-test/.github/workflows/reusable-flow.yml@main
+    with:
+      message: ${{ matrix.message }}
+
+
