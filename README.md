@@ -1,5 +1,9 @@
 # act-workflow-test
 
+**Note: This issue has been [fixed][1], [merged][2015], and [released][8].**
+
+---
+
 Small repo with with a minimal example to demonstrate [issue 2003][1] submitted to [`act`][2].
 
 When using [reusable workflows][3] with a [matrix strategy][4], `act` runs all the matrix combinations in a single container, which causes the following error (and therefore quits the test after the first matrix combination is run):
@@ -44,7 +48,7 @@ func (rc *RunContext) String() string {
 }
 ```
 
-Pull request #[2015][2015] has been submitted with the fix.
+Pull request #[2015][2015] has been merged and and included in release [0.2.54][8].
 
 ## License
 
@@ -57,6 +61,7 @@ The software and other files in this repository are released under what is commo
 [5]: ./.github/workflows/standalone-workflow.yml
 [6]: ./.github/workflows/calling-workflow.yml
 [7]: ./.github/workflows/reusable-flow.yml
+[8]: https://github.com/nektos/act/releases/tag/v0.2.54
 [2015]: https://github.com/nektos/act/pull/2015
 [100]: https://choosealicense.com/licenses/mit/
 [101]: ./LICENSE
